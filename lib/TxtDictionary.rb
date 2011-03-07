@@ -18,6 +18,7 @@ class TxtDictionary
   end
 
   def print_out(out_name)
+    $stderr.puts "Creating file: #{out_name}"
     out = File.open(out_name, 'w')
     out.puts "#description #{@desc}"
     out.puts ""
