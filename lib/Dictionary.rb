@@ -90,4 +90,25 @@ class Dictionary
     $stderr.puts "File #{out_name} written...."
     $stderr.puts "Total number of headwords: #{@cards.size}"
   end
+  
+  def each_card
+    @cards.values.sort.each { |card|
+      yield card
+    }
+  end
+  
+  def get_txt_dicts
+    txt_dicts = {}
+
+    each_card { |card|
+      hwd = card.headword
+      card.entries.each { |trn, descs|
+        descs.each { |desc|
+          (txt_dicts[desc] ||= TxtDictionary.new(desc)).add(hwd, trn)
+        }
+      }
+    }
+
+    txt_dicts.values
+  end
 end

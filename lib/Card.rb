@@ -1,5 +1,5 @@
 class Card
-  attr_accessor :headword
+  attr_accessor :headword, :entries
   def initialize(headword)
     @headword = headword
     @entries = {}
