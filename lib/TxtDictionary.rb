@@ -11,8 +11,8 @@ class TxtDictionary
   def extract_to_dir(dir_name)
     file = dir_name + "/" + desc_to_filename + ".txt"
     if (File.exist?(file))
-      $stderr.puts "ERROR: file already exist: '#{file}'"
-      exit
+      $stderr.puts "WARNING: file already exists (will overwrite): '#{file}'"
+      # exit
     end
     print_out(file)
   end

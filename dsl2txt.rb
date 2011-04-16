@@ -32,8 +32,8 @@ if ($IN.size == 0 || $OUT.size == 0)
 end
 
 if File.exist?($OUT)
-  $stderr.puts "ERROR: Output directory already exist: '#{$OUT}'"
-  exit
+  $stderr.puts "WARNING: Output directory already exists: '#{$OUT}'"
+  # exit
 else
   $stderr.puts "Creating output directory: '#{$OUT}'"
   Dir.mkdir($OUT)
