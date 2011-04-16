@@ -28,6 +28,6 @@ class TxtDictionary
   end
 
   def desc_to_filename
-    @desc.gsub('"', '').gsub(/\s\\#/, '_')
+    Russian::Transliteration.transliterate(@desc.gsub('"', '').gsub(/[\s\\\/\*\?"\|<>#:]+/, '_'))
   end
 end

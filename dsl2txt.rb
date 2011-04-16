@@ -4,6 +4,7 @@ require 'fileutils'
 require File.expand_path('../lib/Dictionary', __FILE__)
 require File.expand_path('../lib/Card', __FILE__)
 require File.expand_path('../lib/TxtDictionary', __FILE__)
+require File.expand_path('../lib/transliteration', __FILE__)
 
 $IN = ""
 $OUT = ""
